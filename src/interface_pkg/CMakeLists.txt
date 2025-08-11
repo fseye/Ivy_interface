@@ -15,8 +15,13 @@ find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(Qt5 REQUIRED COMPONENTS Widgets UiTools)
+find_package(ament_index_cpp REQUIRED)
 
-install(FILES resource/mainwindow.ui DESTINATION share/${PROJECT_NAME}/resource)
+install(
+  DIRECTORY resources/
+  DESTINATION share/${PROJECT_NAME}/resources
+  FILES_MATCHING PATTERN "*.ui"
+)
 
 add_executable(ivy_interface
   src/interface_node.cpp
@@ -27,6 +32,7 @@ ament_target_dependencies(ivy_interface rclcpp std_msgs)
 target_link_libraries(ivy_interface
   Qt5::Widgets
   Qt5::UiTools
+  ament_index_cpp::ament_index_cpp
 )
 
 include_directories(
@@ -37,10 +43,6 @@ include_directories(
 install(TARGETS
   ivy_interface
   DESTINATION lib/${PROJECT_NAME}
-)
-
-install(DIRECTORY resource/
-  DESTINATION share/${PROJECT_NAME}/resource
 )
 
 if(BUILD_TESTING)

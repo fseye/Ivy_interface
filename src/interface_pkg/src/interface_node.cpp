@@ -11,6 +11,8 @@
 #include <QString>
 #include <unordered_map>
 
+#include <ament_index_cpp/get_package_share_directory.hpp> 
+
 
 #include "rclcpp/rclcpp.hpp"
 #include "std_msgs/msg/float32.hpp"
@@ -409,18 +411,29 @@ int main(int argc, char *argv[])
 
     QApplication app(argc, argv);
 
-    QFile uiFile("/home/fseye/mainwindow.ui");
+    std::string pkg_share_dir = ament_index_cpp::get_package_share_directory("interface_pkg");
+    QString ui_path = QString::fromStdString(pkg_share_dir + "/resources/mainwindow.ui");
+
+    QFile uiFile(ui_path);
+    if (!uiFile.open(QFile::ReadOnly)) {
+        qFatal("Impossible de charger le fichier .ui");
+        return -1;
+    }
+
+
+    //QFile uiFile("/home/fseye/mainwindow.ui");
     uiFile.open(QFile::ReadOnly);
 
     QUiLoader loader;
     QMainWindow* mainWindow = qobject_cast<QMainWindow*>(loader.load(&uiFile));
 
     uiFile.close();
-
+/*
     if (!mainWindow) {
         qFatal("Impossible de charger le fichier .ui");
         return -1;
-    }
+    }*/
+
 
     // charger les objets qt
 
