@@ -202,7 +202,7 @@ class control_management: public rclcpp::Node
 };
 
 
-
+// ajout pour test git
 int main(int argc, char * argv[])
 {
   rclcpp::init(argc, argv);
