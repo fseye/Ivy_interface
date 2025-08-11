@@ -1,0 +1,1281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1058</width>
+    <height>895</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QWidget" name="widget" native="true">
+      <widget class="QWidget" name="verticalLayoutWidget">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>351</width>
+         <height>811</height>
+        </rect>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <widget class="QGroupBox" name="gb_stepper">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>1</horstretch>
+            <verstretch>3</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QGroupBox {
+	font: 18pt &quot;Ubuntu&quot;;
+    font-weight: bold;
+    border: 2px solid #4CAF50;
+    border-radius: 6px;
+    margin-top: 10px;
+}
+QGroupBox::title {
+    subcontrol-origin: margin;
+    left: 10px;
+    padding: 0 5px;
+    font-weight: bold;
+}
+
+</string>
+          </property>
+          <property name="title">
+           <string>Steppers</string>
+          </property>
+          <widget class="QPushButton" name="btn_NoControl">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>60</y>
+             <width>121</width>
+             <height>25</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">font: 16pt &quot;Ubuntu&quot;;</string>
+           </property>
+           <property name="text">
+            <string>No control</string>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="btn_reinit">
+           <property name="geometry">
+            <rect>
+             <x>140</x>
+             <y>60</y>
+             <width>101</width>
+             <height>25</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">font: 16pt &quot;Ubuntu&quot;;</string>
+           </property>
+           <property name="text">
+            <string>Reinit</string>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="btn_controle">
+           <property name="geometry">
+            <rect>
+             <x>250</x>
+             <y>60</y>
+             <width>89</width>
+             <height>25</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">font: 16pt &quot;Ubuntu&quot;;</string>
+           </property>
+           <property name="text">
+            <string>Control</string>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_11">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>40</y>
+             <width>61</width>
+             <height>17</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">font: 16pt &quot;Ubuntu&quot;;</string>
+           </property>
+           <property name="text">
+            <string>Mode</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="lb_ind_stp2">
+           <property name="geometry">
+            <rect>
+             <x>190</x>
+             <y>130</y>
+             <width>40</width>
+             <height>40</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QLabel {
+    background-color: rgb(211, 211, 211);       /* couleur  */
+    border-radius: 20px;             /* rayon arrondi (moitié de la taille) */
+    min-width: 40px;
+    min-height: 40px;
+    max-width: 40px;
+    max-height: 40px;
+    color: white;
+    font-weight: bold;
+}
+</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+          <widget class="QLabel" name="lb_ind_stp1">
+           <property name="geometry">
+            <rect>
+             <x>100</x>
+             <y>130</y>
+             <width>40</width>
+             <height>40</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QLabel {
+    background-color: rgb(211, 211, 211);       /* couleur  */
+    border-radius: 20px;             /* rayon arrondi (moitié de la taille) */
+    min-width: 40px;
+    min-height: 40px;
+    max-width: 40px;
+    max-height: 40px;
+    color: white;
+    font-weight: bold;
+}
+</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+          <widget class="QLabel" name="lb_ind_stp3">
+           <property name="geometry">
+            <rect>
+             <x>100</x>
+             <y>200</y>
+             <width>40</width>
+             <height>40</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QLabel {
+    background-color: rgb(211, 211, 211);       /* couleur  */
+    border-radius: 20px;             /* rayon arrondi (moitié de la taille) */
+    min-width: 40px;
+    min-height: 40px;
+    max-width: 40px;
+    max-height: 40px;
+    color: white;
+    font-weight: bold;
+}
+</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+          <widget class="QLabel" name="lb_ind_stp4">
+           <property name="geometry">
+            <rect>
+             <x>190</x>
+             <y>200</y>
+             <width>40</width>
+             <height>40</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QLabel {
+    background-color: rgb(211, 211, 211);       /* couleur  */
+    border-radius: 20px;             /* rayon arrondi (moitié de la taille) */
+    min-width: 40px;
+    min-height: 40px;
+    max-width: 40px;
+    max-height: 40px;
+    color: white;
+    font-weight: bold;
+}
+</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_14">
+           <property name="geometry">
+            <rect>
+             <x>240</x>
+             <y>120</y>
+             <width>91</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">font: 16pt &quot;Ubuntu&quot;;</string>
+           </property>
+           <property name="text">
+            <string>Stepper 2</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="lb_nbpas_stp2">
+           <property name="geometry">
+            <rect>
+             <x>240</x>
+             <y>150</y>
+             <width>67</width>
+             <height>17</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">font: 16pt &quot;Ubuntu&quot;;</string>
+           </property>
+           <property name="text">
+            <string>0</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="lb_nbpas_stp4">
+           <property name="geometry">
+            <rect>
+             <x>240</x>
+             <y>230</y>
+             <width>67</width>
+             <height>17</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">font: 16pt &quot;Ubuntu&quot;;</string>
+           </property>
+           <property name="text">
+            <string>0</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_17">
+           <property name="geometry">
+            <rect>
+             <x>240</x>
+             <y>200</y>
+             <width>91</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">font: 16pt &quot;Ubuntu&quot;;</string>
+           </property>
+           <property name="text">
+            <string>Stepper 4</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_19">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>120</y>
+             <width>101</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">font: 16pt &quot;Ubuntu&quot;;</string>
+           </property>
+           <property name="text">
+            <string>Stepper 1</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="lb_nbpas_stp1">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>150</y>
+             <width>67</width>
+             <height>17</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">font: 16pt &quot;Ubuntu&quot;;</string>
+           </property>
+           <property name="text">
+            <string>0</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_31">
+           <property name="geometry">
+            <rect>
+             <x>6</x>
+             <y>200</y>
+             <width>91</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">font: 16pt &quot;Ubuntu&quot;;</string>
+           </property>
+           <property name="text">
+            <string>Stepper 3</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="lb_nbpas_stp3">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>230</y>
+             <width>67</width>
+             <height>17</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">font: 16pt &quot;Ubuntu&quot;;</string>
+           </property>
+           <property name="text">
+            <string>0</string>
+           </property>
+          </widget>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="gb_remb">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>1</horstretch>
+            <verstretch>2</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QGroupBox {
+	font: 18pt &quot;Ubuntu&quot;;
+    font-weight: bold;
+    border: 2px solid #4CAF50;
+    border-radius: 6px;
+    margin-top: 10px;
+}
+QGroupBox::title {
+    subcontrol-origin: margin;
+    left: 10px;
+    padding: 0 5px;
+    font-weight: bold;
+}
+
+</string>
+          </property>
+          <property name="title">
+           <string>Rembobineur</string>
+          </property>
+          <widget class="QPushButton" name="btn_enrouleur_recul_2">
+           <property name="geometry">
+            <rect>
+             <x>230</x>
+             <y>280</y>
+             <width>61</width>
+             <height>21</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Recul</string>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="btn_enrouleur_avance_2">
+           <property name="geometry">
+            <rect>
+             <x>130</x>
+             <y>280</y>
+             <width>81</width>
+             <height>21</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Avance</string>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+          </widget>
+          <widget class="QWidget" name="gridLayoutWidget">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>30</y>
+             <width>331</width>
+             <height>151</height>
+            </rect>
+           </property>
+           <layout class="QGridLayout" name="gridLayout">
+            <item row="2" column="2">
+             <widget class="QSpinBox" name="sb_cmd_remb_V2">
+              <property name="styleSheet">
+               <string notr="true">font: 16pt &quot;Ubuntu&quot;;</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+              <property name="maximum">
+               <number>300</number>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="2">
+             <widget class="QLabel" name="label_41">
+              <property name="styleSheet">
+               <string notr="true">font: 16pt &quot;Ubuntu&quot;;</string>
+              </property>
+              <property name="text">
+               <string>Vitesse Rec.</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="1">
+             <widget class="QSpinBox" name="sb_cmd_remb_V1">
+              <property name="styleSheet">
+               <string notr="true">font: 16pt &quot;Ubuntu&quot;;</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+              <property name="maximum">
+               <number>300</number>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QLabel" name="label_40">
+              <property name="styleSheet">
+               <string notr="true">font: 16pt &quot;Ubuntu&quot;;</string>
+              </property>
+              <property name="text">
+               <string>Vitesse Av.</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QLabel" name="label_39">
+              <property name="styleSheet">
+               <string notr="true">font: 16pt &quot;Ubuntu&quot;;</string>
+              </property>
+              <property name="text">
+               <string>Consigne</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="1">
+             <widget class="QPushButton" name="btn_remb_avance">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">font: 16pt &quot;Ubuntu&quot;;</string>
+              </property>
+              <property name="text">
+               <string>Avance</string>
+              </property>
+              <property name="checkable">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="2">
+             <widget class="QPushButton" name="btn_remb_recul">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">font: 16pt &quot;Ubuntu&quot;;</string>
+              </property>
+              <property name="text">
+               <string>Recul</string>
+              </property>
+              <property name="checkable">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="0">
+             <widget class="QLabel" name="label">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">font: 16pt &quot;Ubuntu&quot;;</string>
+              </property>
+              <property name="text">
+               <string>Etat </string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="gb_enrouleur">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>3</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QGroupBox {
+	font: 18pt &quot;Ubuntu&quot;;
+    font-weight: bold;
+    border: 2px solid #4CAF50;
+    border-radius: 6px;
+    margin-top: 10px;
+}
+QGroupBox::title {
+    subcontrol-origin: margin;
+    left: 10px;
+    padding: 0 3px 0 3px;
+}
+</string>
+          </property>
+          <property name="title">
+           <string>Enrouleur</string>
+          </property>
+          <widget class="QWidget" name="gridLayoutWidget_3">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>40</y>
+             <width>331</width>
+             <height>91</height>
+            </rect>
+           </property>
+           <layout class="QGridLayout" name="gridLayout_3">
+            <item row="1" column="0">
+             <widget class="QPushButton" name="btn_enrouleur_manu">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">font: 16pt &quot;Ubuntu&quot;;</string>
+              </property>
+              <property name="text">
+               <string>Manuel</string>
+              </property>
+              <property name="checkable">
+               <bool>true</bool>
+              </property>
+              <property name="checked">
+               <bool>false</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_5">
+              <property name="styleSheet">
+               <string notr="true">font: 16pt &quot;Ubuntu&quot;;</string>
+              </property>
+              <property name="text">
+               <string>Mode </string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QPushButton" name="btn_enrouleur_auto">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">font: 16pt &quot;Ubuntu&quot;;</string>
+              </property>
+              <property name="text">
+               <string>Auto</string>
+              </property>
+              <property name="checkable">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="gridLayoutWidget_4">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>140</y>
+             <width>331</width>
+             <height>91</height>
+            </rect>
+           </property>
+           <layout class="QGridLayout" name="gridLayout_4">
+            <item row="1" column="0">
+             <widget class="QPushButton" name="btn_enrouleur_avance">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">font: 16pt &quot;Ubuntu&quot;;</string>
+              </property>
+              <property name="text">
+               <string>Avance</string>
+              </property>
+              <property name="checkable">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_6">
+              <property name="styleSheet">
+               <string notr="true">font: 16pt &quot;Ubuntu&quot;;</string>
+              </property>
+              <property name="text">
+               <string>Sens</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QPushButton" name="btn_enrouleur_recul">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">font: 16pt &quot;Ubuntu&quot;;</string>
+              </property>
+              <property name="text">
+               <string>Recul</string>
+              </property>
+              <property name="checkable">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="gridLayoutWidget_5">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>240</y>
+             <width>331</width>
+             <height>56</height>
+            </rect>
+           </property>
+           <layout class="QGridLayout" name="gridLayout_5">
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_7">
+              <property name="styleSheet">
+               <string notr="true">font: 16pt &quot;Ubuntu&quot;;</string>
+              </property>
+              <property name="text">
+               <string>Vitesse</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QLabel" name="lb_vitesse_omb">
+              <property name="styleSheet">
+               <string notr="true">font: 63 30pt &quot;URW Bookman&quot;;</string>
+              </property>
+              <property name="text">
+               <string>0</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="verticalLayoutWidget_2">
+       <property name="geometry">
+        <rect>
+         <x>359</x>
+         <y>0</y>
+         <width>341</width>
+         <height>811</height>
+        </rect>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <widget class="QGroupBox" name="groupBox_3">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>3</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QGroupBox {
+	font: 18pt &quot;Ubuntu&quot;;
+    font-weight: bold;
+    border: 2px solid #4CAF50;
+    border-radius: 6px;
+    margin-top: 10px;
+}
+QGroupBox::title {
+    subcontrol-origin: margin;
+    left: 10px;
+    padding: 0 3px 0 3px;
+}
+</string>
+          </property>
+          <property name="title">
+           <string>Pneumatique</string>
+          </property>
+          <widget class="QPushButton" name="pb_moteur">
+           <property name="geometry">
+            <rect>
+             <x>50</x>
+             <y>130</y>
+             <width>60</width>
+             <height>60</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+    background-color: lightblue;       /* couleur  */
+    border-radius: 30px;             /* rayon arrondi (moitié de la taille) */
+    min-width: 60px;
+    min-height: 60px;
+    max-width: 60px;
+    max-height: 60px;
+    color: white;
+    font-weight: bold;
+}</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="pb_gonflage">
+           <property name="geometry">
+            <rect>
+             <x>210</x>
+             <y>130</y>
+             <width>60</width>
+             <height>60</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+    background-color: rgb(255, 102, 102);       /* couleur  */
+    border-radius: 30px;             /* rayon arrondi (moitié de la taille) */
+    min-width: 60px;
+    min-height: 60px;
+    max-width: 60px;
+    max-height: 60px;
+    color: white;
+    font-weight: bold;
+}</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="pb_surpression">
+           <property name="geometry">
+            <rect>
+             <x>130</x>
+             <y>70</y>
+             <width>60</width>
+             <height>60</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+    background-color: rgb(255,255,224);       /* couleur  */
+    border-radius: 30px;             /* rayon arrondi (moitié de la taille) */
+    min-width: 60px;
+    min-height: 60px;
+    max-width: 60px;
+    max-height: 60px;
+    color: white;
+    font-weight: bold;
+}
+</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="pb_coussin">
+           <property name="geometry">
+            <rect>
+             <x>130</x>
+             <y>200</y>
+             <width>60</width>
+             <height>60</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+    background-color: lightgreen;       /* couleur  */
+    border-radius: 30px;             /* rayon arrondi (moitié de la taille) */
+    min-width: 60px;
+    min-height: 60px;
+    max-width: 60px;
+    max-height: 60px;
+    color: white;
+    font-weight: bold;
+}</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_15">
+           <property name="geometry">
+            <rect>
+             <x>200</x>
+             <y>190</y>
+             <width>91</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">font: 16pt &quot;Ubuntu&quot;;</string>
+           </property>
+           <property name="text">
+            <string>gonflage</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_16">
+           <property name="geometry">
+            <rect>
+             <x>40</x>
+             <y>190</y>
+             <width>81</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">font: 16pt &quot;Ubuntu&quot;;</string>
+           </property>
+           <property name="text">
+            <string>Moteur</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_18">
+           <property name="geometry">
+            <rect>
+             <x>100</x>
+             <y>260</y>
+             <width>131</width>
+             <height>20</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">font: 16pt &quot;Ubuntu&quot;;</string>
+           </property>
+           <property name="text">
+            <string>Coussin d'air</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_32">
+           <property name="geometry">
+            <rect>
+             <x>100</x>
+             <y>40</y>
+             <width>121</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">font: 16pt &quot;Ubuntu&quot;;</string>
+           </property>
+           <property name="text">
+            <string>Surpression</string>
+           </property>
+          </widget>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="groupBox">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>2</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QGroupBox {
+	font: 18pt &quot;Ubuntu&quot;;
+    font-weight: bold;
+    border: 2px solid #4CAF50;
+    border-radius: 6px;
+    margin-top: 10px;
+}
+QGroupBox::title {
+    subcontrol-origin: margin;
+    left: 10px;
+    padding: 0 3px 0 3px;
+}
+</string>
+          </property>
+          <property name="title">
+           <string>Indicateurs de Pression</string>
+          </property>
+          <widget class="QWidget" name="gridLayoutWidget_6">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>29</y>
+             <width>321</width>
+             <height>161</height>
+            </rect>
+           </property>
+           <layout class="QGridLayout" name="gridLayout_6" rowminimumheight="0,0,0">
+            <item row="1" column="0">
+             <widget class="QLabel" name="label_35">
+              <property name="styleSheet">
+               <string notr="true">font: 16pt &quot;Ubuntu&quot;;</string>
+              </property>
+              <property name="text">
+               <string>Consigne</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="2">
+             <widget class="QSpinBox" name="sB_cmd_P2">
+              <property name="styleSheet">
+               <string notr="true">font: 16pt &quot;Ubuntu&quot;;</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QLabel" name="label_33">
+              <property name="styleSheet">
+               <string notr="true">font: 16pt &quot;Ubuntu&quot;;</string>
+              </property>
+              <property name="text">
+               <string>P1 (mBar)</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="2">
+             <widget class="QLabel" name="label_34">
+              <property name="styleSheet">
+               <string notr="true">font: 16pt &quot;Ubuntu&quot;;</string>
+              </property>
+              <property name="text">
+               <string>P2(mBar) </string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QSpinBox" name="sB_cmd_P1">
+              <property name="styleSheet">
+               <string notr="true">font: 16pt &quot;Ubuntu&quot;;
+</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QLabel" name="label_36">
+              <property name="styleSheet">
+               <string notr="true">font: 16pt &quot;Ubuntu&quot;;</string>
+              </property>
+              <property name="text">
+               <string>Capteur</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="1">
+             <widget class="QLabel" name="lb_P1">
+              <property name="styleSheet">
+               <string notr="true">background-color: lightblue;       /* couleur  */
+font: 63 30pt &quot;URW Bookman&quot;;</string>
+              </property>
+              <property name="text">
+               <string>0</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="2">
+             <widget class="QLabel" name="lb_p2">
+              <property name="styleSheet">
+               <string notr="true">background-color: green;       /* couleur  */
+font: 63 30pt &quot;URW Bookman&quot;;</string>
+              </property>
+              <property name="text">
+               <string>0</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="groupBox_2">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>3</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QGroupBox {
+	font: 18pt &quot;Ubuntu&quot;;
+    font-weight: bold;
+    border: 2px solid #4CAF50;
+    border-radius: 6px;
+    margin-top: 10px;
+}
+QGroupBox::title {
+    subcontrol-origin: margin;
+    left: 10px;
+    padding: 0 3px 0 3px;
+}
+</string>
+          </property>
+          <property name="title">
+           <string>Coiffe</string>
+          </property>
+          <widget class="QWidget" name="gridLayoutWidget_8">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>40</y>
+             <width>321</width>
+             <height>91</height>
+            </rect>
+           </property>
+           <layout class="QGridLayout" name="gridLayout_8">
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_37">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">font: 16pt &quot;Ubuntu&quot;;</string>
+              </property>
+              <property name="text">
+               <string>Contact</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="lb_contact">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background-color: lightgrey;       /* couleur  */
+font: 63 30pt &quot;URW Bookman&quot;;</string>
+              </property>
+              <property name="text">
+               <string>1 &amp; 2</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="gridLayoutWidget_9">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>140</y>
+             <width>321</width>
+             <height>91</height>
+            </rect>
+           </property>
+           <layout class="QGridLayout" name="gridLayout_9">
+            <item row="2" column="0">
+             <widget class="QLabel" name="lb_dist_omb">
+              <property name="styleSheet">
+               <string notr="true">background-color: lightgrey;       /* couleur  */
+font: 63 30pt &quot;URW Bookman&quot;;</string>
+              </property>
+              <property name="text">
+               <string>25</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_38">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">font: 16pt &quot;Ubuntu&quot;;</string>
+              </property>
+              <property name="text">
+               <string>Distance Ombilicale:</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="formLayoutWidget">
+           <property name="geometry">
+            <rect>
+             <x>80</x>
+             <y>230</y>
+             <width>187</width>
+             <height>72</height>
+            </rect>
+           </property>
+           <layout class="QFormLayout" name="formLayout">
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_2">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="pixmap">
+               <pixmap>Pictures/Screenshots/ivy_logo.png</pixmap>
+              </property>
+              <property name="scaledContents">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="verticalLayoutWidget_3">
+       <property name="geometry">
+        <rect>
+         <x>700</x>
+         <y>-20</y>
+         <width>331</width>
+         <height>831</height>
+        </rect>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_3"/>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1058</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
