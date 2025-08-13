@@ -3,8 +3,8 @@
 #include "sensor_msgs/msg/joy.hpp"
 
 #include "std_msgs/msg/float32.hpp"
-#include "std_msgs/msg/float32_multi_array.hpp"
-#include "std_msgs/msg/int32_multi_array.hpp"
+#include "std_msgs/msg/float32_multi_array.hpp" //inclusion pour les tableaux de float32
+#include "std_msgs/msg/int32_multi_array.hpp" //inclusion pour les tableaux de int32
 #include "std_msgs/msg/int32.hpp"
 
 #include <algorithm>
@@ -56,6 +56,7 @@ class control_management: public rclcpp::Node
 
         void joy_callback(const sensor_msgs::msg::Joy::SharedPtr msg)
         {
+            //VERIFICATION DE LA TAILLE DU MESSAGE
             if (axis_index_  >= msg->axes.size()){
                 RCLCPP_WARN (this->get_logger(), "index d'axe invalide");
                 return;
