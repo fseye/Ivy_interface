@@ -60,6 +60,13 @@ def generate_launch_description():
             name='interface_node',
             output= 'screen'
         ),
+	
+	Node(
+            package='vanne_test_pkg',
+            executable='vanne_node',
+            name='joy_relay_node',
+            output= 'screen'
+        ),
 
         # test
         
